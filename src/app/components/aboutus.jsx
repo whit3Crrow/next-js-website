@@ -15,7 +15,7 @@ import { motion } from "framer-motion";
 //dodaj button na samym dole pod deewizą
 //pobierz React Animations bo ten hover słabo działa
 
-function aboutus(props) {
+function AboutUs(props) {
 
     const text = useRef(null);
     const isInView = useInView(text);
