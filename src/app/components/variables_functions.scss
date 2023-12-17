@@ -1,0 +1,79 @@
+$fs: 18px;
+$darkblue: #142433;
+$white: #ffffff;
+$blue: #004B8F;
+$leter_spacing: 0px;
+$navheight: 63px;
+
+
+@mixin hero_section_header_text() {
+    padding: 0px;
+    margin: 0px;
+    font-size: 20px;
+    line-height: 100px;
+    letter-spacing: 10px;
+}
+
+@mixin padding-x($prop) {
+    padding-left: $prop;
+    padding-right: $prop;
+}
+
+@mixin padding-y($prop) {
+    padding-top: $prop;
+    padding-bottom: $prop;
+}
+
+@mixin margin-x($prop) {
+    margin-left: $prop;
+    margin-right: $prop;
+}
+
+@mixin margin-y($prop) {
+    margin-top: $prop;
+    margin-bottom: $prop;
+}
+
+@mixin center_flex() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//global Classes
+
+.caption{
+    
+    background-size: 100%;
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255) 40%, rgba(226, 224, 224, 0.897) 100%);
+    font-size: 60px;
+    line-height: 43px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    /* Dodajemy prefix dla kompatybilności z przeglądarkami Webkit (Safari/Chrome) */
+    text-fill-color: transparent;
+    /* Kolor tekstu, który będzie widoczny tam, gdzie tło jest przezroczyste */
+    z-index: 4;
+    transition: 0.3s ease-in-out;
+}
+.caption_dark{
+        transition: background-image 0.3s ease-in-out;
+        font-size: 60px;
+        line-height: 100%;
+        font-weight: 700;
+        letter-spacing: -1px;
+        color: transparent;
+        background-position: 40% 20%;
+        background-size: 200% 200%;
+        background-image: linear-gradient(0deg, $darkblue 0%, rgb(20, 31, 129) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        /* Dodajemy prefix dla kompatybilności z przeglądarkami Webkit (Safari/Chrome) */
+        text-fill-color: transparent;
+        /* Kolor tekstu, który będzie widoczny tam, gdzie tło jest przezroczyste */
+        z-index: 4;
+        animation: moveGradient 4s infinite;
+}

@@ -1,0 +1,319 @@
+@import 'variables_functions';
+
+#gallery {
+    width: 100vw;
+    height: calc(100vh - $navheight);
+    background-color: $darkblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    z-index: 10;
+    overflow: hidden;
+    position: relative;
+
+    .container {
+        height: 80%;
+        font-size: 18px;
+        margin-top: 0;
+
+        .grid-item {
+            cursor: pointer;
+            flex-direction: column;
+
+            h4 {
+                font-size: 18px;
+                font-weight: 300;
+
+            }
+
+            @include center_flex();
+
+            .cir {
+                margin-bottom: 25px;
+                background-size: cover;
+                background-position: center;
+                box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+                height: 170px;
+                width: 375px;
+                border-radius: 5px;
+            }
+
+
+            .button {
+                animation: moveGradient 9s infinite;
+                background-image: linear-gradient(to left top, black, rgb(74, 219, 255));
+                box-shadow: rgba(40, 43, 41, 0.25) 0px 6px 12px -2px, rgba(32, 34, 32, 0.3) 0px 3px 7px -3px;
+            }
+
+        }
+
+        gap: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        backdrop-filter: none;
+        width: 100%;
+        color: white;
+        font-size: 40px;
+    }
+
+    .caption {
+        line-height: 100%;
+        background-size: 100%;
+        background-image: linear-gradient(to bottom, rgb(255, 255, 255) 40%, rgba(167, 165, 165, 0.897) 100%);
+
+    }
+
+
+
+    .overlay1 {
+        right: 0px;
+        bottom: 0px;
+        filter: blur(60px);
+        /* blur-3xl */
+        background-image: linear-gradient(to left top, black, rgba(37, 121, 173, 0.534), $darkblue 70%);
+        z-index: 10;
+        position: absolute;
+        width: 100vw;
+        height: 30vh;
+        z-index: 10;
+        background-size: 200% 200%;
+        background-position: 100% 100%;
+        transition: all 1s ease-in-out;
+        animation: moveGradient 9s infinite;
+    }
+
+    .drawer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        height: 90vh;
+        background-color: white;
+        z-index: 120;
+        right: 0;
+        z-index: 100;
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+        &::before {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            content: '';
+            border-radius: 5px;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            transform: rotate(45deg);
+            top: calc(50% - 100px);
+            left: -100px;
+            z-index: 101;
+
+            background-color: white;
+        }
+
+        &::after {
+            z-index: 101;
+            border-radius: 5px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            transform: rotate(45deg);
+            top: calc(50% - 75px);
+            left: -75px;
+            background: $darkblue;
+        }
+
+        .breadcrumb {
+            background-size: 200% 200%;
+            background-position: 40% 20%;
+            background-image: radial-gradient($white, rgba(149, 160, 161, 0.411));
+            animation: moveGradient 9s infinite;
+            font-size: 18px;
+        }
+
+        .div {
+            position: absolute;
+            left:
+                100px;
+            top: 50px;
+        }
+
+        #galery {
+            overflow-y: scroll;
+            background-image: radial-gradient($white, rgba(149, 160, 161, 0.411));
+            border-radius: 5px;
+            box-shadow: rgba(255, 255, 255, 0.25) 0px 13px 27px -5px, rgba(226, 220, 220, 0.3) 0px 8px 16px -8px;
+            backdrop-filter: blur(10px);
+            animation: moveGradient 9s infinite;
+            background-size: 200% 200%;
+            background-position: 40% 20%;
+            padding: 10px;
+            z-index: 102;
+
+            .pic {
+                border-radius: 5px;
+                margin: 20px;
+                height: 60%;
+                box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+            }
+        }
+
+        .full_pic {
+            transform: translate(-50%, -50%);
+
+
+        }
+
+        .x {
+            position: 'absolute';
+            top: '50px';
+            left: '75px';
+            font-size: '35px';
+            cursor: 'pointer';
+            z-index: '150';
+            color: 'wheat';
+            text-shadow: '2px 1px 1px  black';
+        }
+    }
+
+    .overlay2 {
+        animation: moveGradient 4s infinite;
+        top: 0px;
+        z-index: 10;
+        background-image: linear-gradient(to right bottom, rgba(22, 74, 107, 0.534), $darkblue 70%);
+        position: absolute;
+        filter: blur(60px);
+        /* blur-3xl */
+        width: 50vw;
+        height: 20vh;
+        z-index: 10;
+        background-size: 200% 200%;
+        background-position: 40% 20%;
+        transition: all 1s ease-in-out;
+        animation: moveGradient 4s infinite;
+
+    }
+
+    .overlay3 {
+        right: 0px;
+        top: 0px;
+        filter: blur(60px);
+        /* blur-3xl */
+        background-image: linear-gradient(to left bottom, rgba(22, 74, 107, 0.534), $darkblue 70%);
+        background-size: 200% 200%;
+        background-position: 40% 20%;
+        transition: all 1s ease-in-out;
+        animation: moveGradient 4s infinite;
+        z-index: 10;
+        position: absolute;
+        width: 50vw;
+        height: 20vh;
+
+    }
+
+    .overlaywhite {
+        right: 0px;
+        top: 0px;
+        background-color: white;
+        z-index: 9;
+        position: absolute;
+        width: 100vw;
+        height: 50vh;
+    }
+}
+
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+
+    }
+}
+
+@media (max-width:900px) {
+    #gallery {
+
+
+        .container {
+            gap: 16px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            backdrop-filter: none;
+            width: 100%;
+            height: 100%;
+            color: white;
+            font-size: 40px;
+            margin-top: 0;
+           animation: none;
+            .grid-item {
+                .cir {
+                    width: 175px;
+                    height: 120px;
+                }
+
+                width: 100%;
+
+                h4 {
+                    font-size: 14px;
+                }
+
+                cursor: pointer;
+                flex-direction: column;
+
+            }
+        }
+
+        .drawer {
+
+            &::after,
+            &::before {
+                display: none;
+            }
+
+            .div {
+                position: absolute;
+                left: 5px;
+                top: 5px;
+                scale: 70%;
+            }
+
+            #galery {
+                .pic {
+                    height: 20%;
+                }
+
+                margin-bottom: 20px;
+            }
+
+            .breadcrumb {
+                margin-top: 60px;
+            }
+
+            .full_pic {
+                transform: translate(-100%, -100%);
+                scale: 50%;
+            }
+
+            .x {
+                position: 'absolute';
+                top: '30px';
+                left: '15px';
+                font-size: '15px';
+                cursor: 'pointer';
+                z-index: '150';
+                color: 'white';
+                text-shadow: '2px 1px 1px  black';
+            }
+        }
+    }
+}

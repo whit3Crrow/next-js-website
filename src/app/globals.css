@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-weight: 400;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;  /* y or x direction, 'mandatory' will snap directly, 'proximity' will snap when near to the section */
+    
+   
+}
+section{
+    scroll-margin-top: 63px ;
+    scroll-snap-align: start;
+}
+@font-face {
+    font-display: swap;
+}
+body {
+    overflow-x: hidden;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+a:visited,
+a:focus,
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.p-4 {
+    padding: 400px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 600px) {
+    html {
+        scroll-behavior: smooth;
+        scroll-snap-type: none;  /* y or x direction, 'mandatory' will snap directly, 'proximity' will snap when near to the section */
+        
+       
+    }
+    section{
+        scroll-margin-top: none;
+        scroll-snap-align: none;
+    }
+  }

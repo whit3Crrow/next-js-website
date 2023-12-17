@@ -1,0 +1,364 @@
+@import 'variables_functions';
+
+.background {
+    scroll-snap-align: start;
+
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    .bg {
+        width: 100vw;
+        position: absolute;
+        z-index: -1;
+        filter: brightness(120%); /* Adjust the percentage as needed */
+    }
+
+}
+
+.button {
+    position: relative;
+    z-index: 20;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 23px;
+    color: white;
+    padding: 3px;
+    border-radius: 30px;
+    display: flex;
+    @include center_flex();
+    height: 35px;
+    width: 90px;
+    background-image: linear-gradient(to left top, blue, red);
+    background-size: 200% 200%;
+    /* Początkowy rozmiar gradientu */
+    transition: 0.2s ease-in-out all;
+    background-position: 20% 20%;
+    animation: moveGradient 5s linear infinite;
+    /* Dodajemy background-size do transition */
+    box-shadow: rgba(230, 19, 121, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.button:hover {
+    box-shadow: rgba(0, 177, 190, 0.25) 0px 16px 22px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+    transform: scale(1.05);
+    /* Skalowanie elementu na hoverze */
+    /* Zmiana rozmiaru gradientu na hoverze */
+}
+
+.button:active {
+    transform: scale(0.95);
+
+}
+
+.container {
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    @include margin-x(auto);
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-top: 130px;
+    z-index: 33;
+    opacity: 1;
+    max-width: 1200px;
+    padding: 20px;
+    border-radius: 12px;
+    height: auto;
+    backdrop-filter: blur(12px);
+    animation: load 1s ease-in-out forwards;
+
+
+    .text_box {
+        margin-top: 70px;
+        margin-right: 120px;
+        z-index: 3;
+        text-align: end;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        
+    }
+
+    h1 {
+        transition: background-image 0.3s ease-in-out;
+        font-size: 60px;
+        line-height: 43px;
+        font-weight: 700;
+        letter-spacing: -1px;
+        color: transparent;
+        background-position: 40% 20%;
+        background-size: 200% 200%;
+
+        background-image: linear-gradient(0deg, $darkblue 0%, rgb(20, 31, 129) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        /* Dodajemy prefix dla kompatybilności z przeglądarkami Webkit (Safari/Chrome) */
+        text-fill-color: transparent;
+        /* Kolor tekstu, który będzie widoczny tam, gdzie tło jest przezroczyste */
+        z-index: 4;
+        animation: moveGradient 4s infinite;
+    }
+
+    h2 {
+        margin-top: 30px;
+        color: $darkblue;
+        font-style: italic;
+        font-size: 18px;
+    }
+
+    .heroimg {
+        animation: updown 5s infinite;
+        cursor: pointer;
+        width: auto;
+
+
+
+        .triangle {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            opacity: 1;
+            scale: 10%;
+            z-index: -1;
+            rotate: 70deg;
+            transition: 0.3s ease-in-out all;
+            animation: traingle_pop1 3s forwards 1s;
+        }
+
+        .triangle:nth-child(2) {
+            left: 0px;
+            rotate: 20deg;
+            top: 0px;
+            scale: 30%;
+            opacity: 1;
+            z-index: -2;
+            animation: traingle_pop2 12s forwards 1s;
+
+        }
+
+        .triangle:nth-child(3) {
+            left: 0px;
+            rotate: 10deg;
+            top: 0px;
+            
+            scale: 17%;
+            opacity: 0.8;
+            z-index: -2;
+            animation: traingle_pop3 5s forwards 1s;
+        }
+
+        .triangle:last-child {
+            left: 0px;
+            rotate: 0deg;
+            scale: 14%;
+            animation: traingle_pop4 4s forwards 1s;
+            top: 0px;
+        }
+
+        z-index: 2;
+        position: relative;
+
+        img {
+
+            object-fit: cover;
+            height: inherit
+        }
+
+        ;
+    }
+}
+
+.separator{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 240px;
+    background-image: linear-gradient(to bottom,transparent 2%,rgb(255, 255, 255));
+    z-index: 4;
+    
+
+}
+
+@keyframes rotate_triangle_group {
+    from {
+        rotate: 0deg;
+
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+@keyframes updown {
+
+    from {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+
+    }
+
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes traingle_pop2 {
+    10% {
+        rotate: 200deg;
+        left: -230px;
+        top: -50px;
+        scale: 24%;
+        opacity: 1;
+        z-index: -2;
+    }
+    
+
+    100% {
+        rotate: 260deg;
+        left: -230px;
+        top: -50px;
+        scale: 34%;
+        opacity: 1;
+        z-index: -2;
+    }
+}
+
+@keyframes traingle_pop3 {
+    15% {
+        left: -30px;
+        rotate: 60deg;
+        top: 330px;
+
+        scale: 7%;
+        opacity: 1;
+        z-index: -2;
+    }
+
+    100% {
+        left: -30px;
+        rotate: 140deg;
+        top: 330px;
+
+        scale: 17%;
+        opacity: 1;
+        z-index: -2;
+    }
+}
+
+@keyframes traingle_pop4 {
+    20% {
+        left: 220px;
+        rotate: -30deg;
+        scale: 3%;
+
+        top: 0px;
+    }
+    
+    100% {
+        left: 220px;
+        rotate: 0deg;
+        scale: 13%;
+
+        top: 0px;
+    }
+}
+
+@keyframes load {
+    0% {
+        transform: scale(0%);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(90%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(100%);
+    }
+}
+
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+
+    }
+}
+@media (max-width: 1623px) {
+    .bg{
+        margin-top: 300px;
+    }
+}
+@media (max-width: 800px){
+    .bg{
+        display: none;
+    }
+}
+@media (max-width: 1073px) {
+    
+    .bg{
+        margin-top: 400px;
+    }
+    .separator{
+        height: 400px;
+        z-index: -1;
+    }
+    .container {
+        margin-top: 90px;
+        backdrop-filter: none;
+        animation: none;
+        .heroimg {
+            margin-left: 10px;
+            height: 200px;
+            width: auto
+        }
+
+        .triangle {
+            display: none;
+            animation: none;
+        }
+
+        flex-direction: column-reverse;
+
+        .text_box {
+            margin-top: 0px;
+            margin-right: 0px;
+            width: 100vw;
+            @include padding-x(20px);
+            text-align: center;
+        }
+
+        h1 {
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 1) 70%, rgb(255, 63, 105) 100%);
+            align-self: center;
+            font-size: 50px;
+            animation: none
+        }
+
+        h2 {
+            @include padding-x(60px);
+        }
+
+        .button {
+            align-self: center;
+        }
+    }
+}

@@ -1,0 +1,288 @@
+@import 'variables_functions';
+
+#about {
+
+    .back {
+        overflow: hidden;
+        z-index: 1;
+        position: relative;
+        justify-content: center;
+    text-align: center;
+    display: flex;
+        height: 100vh;
+        width: 100vw;
+        background: linear-gradient(white 10%, rgb(206, 206, 231) 80%);
+    }
+
+    .back::after {
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        width: 100vw;
+        height: 350px;
+        content: '';
+        background: linear-gradient(transparent, white)
+    }
+
+    width: 100vw;
+    height: 100vh;
+    background-color: $white;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    z-index: 0;
+
+    .container {
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        margin-top: auto;
+        margin-bottom: auto;
+        align-content: ce;
+        justify-content: center;
+        flex-direction: column;
+        animation: none;
+
+        .cards {
+            margin-top: 130px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 100%;
+            cursor: pointer;
+
+            .red-div {
+                background-color: red;
+                z-index: 2;
+                /* Wyższy niż card */
+                position: relative;
+                /* Dodane, aby z-index miało efekt */
+                height: 200px;
+                width: 200px;
+            }
+
+            .card {
+                transform-style: preserve-3d;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                pointer-events: all;
+                background-color: rgba(255, 255, 255, 0.432);
+                animation-iteration-count: 1;
+                border-radius: 10px;
+                padding: 10px;
+                height: 220px;
+                width: 220px;
+                margin: auto;
+                margin-bottom: 0;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                img {
+                    transform: translateZ(40px);
+                }
+
+                h2 {
+                    transform: translateZ(40px);
+                    font-size: 18px;
+                    font-weight: 600;
+                    display: flex;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                h3 {
+                    position: absolute;
+                    font-size: 18px;
+                    font-weight: 400;
+                    opacity: 0;
+                    color: rgb(48, 47, 53);
+                    
+                    text-align: center;
+                    padding: 20px;
+                    transform: rotateY(180deg) translateZ(40px);
+                }
+            }
+
+            .card:nth-child(1) {
+                z-index: 2;
+            }
+
+            .card:nth-child(3) {
+                z-index: 1;
+            }
+
+            .card:nth-child(2) {
+                z-index: 3;
+                margin-top: 0px;
+            }
+
+        }
+
+        .badges {
+            margin-top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background: transparent;
+            flex-direction: row;
+        }
+
+        .square {
+            flex-direction: row;
+            border-radius: 100%;
+            width: 15px;
+            height: 15px;
+            margin: 10px;
+            background-size: 150% 150%;
+            background-image: linear-gradient(rgb(211, 212, 221), $darkblue, rgb(209, 209, 209));
+            animation: moveGradient 3s infinite;
+        }
+
+        backdrop-filter: none;
+        margin-top: 0px;
+        justify-content: start;
+        width: 100vw;
+        height: 100vh;
+        color: white;
+        font-size: 40px;
+        overflow: visible;
+
+        h3 {
+            background-image: linear-gradient(to bottom, #142433, 90%, rgb(255, 255, 255) 100%);
+            font-size: 18px;
+            width: 100%;
+            font-weight: 400;
+            font-style: italic;
+            line-height: 33px;
+            transition: background-image 0.3s ease-in-out;
+            color: transparent;
+            background-position: 40% 20%;
+            background-size: 200% 200%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            /* Dodajemy prefix dla kompatybilności z przeglądarkami Webkit (Safari/Chrome) */
+            text-fill-color: transparent;
+            /* Kolor tekstu, który będzie widoczny tam, gdzie tło jest przezroczyste */
+            z-index: 4;
+            animation: moveGradient 4s infinite;
+        }      
+    }
+}
+.flex{
+    margin-top: -30px;
+    .a:hover{
+        transform: scale(110%);
+    }
+    width: 100%;
+    @include center_flex();
+}
+.circle {
+    bottom: 50px;
+    left: calc(50% - 220px);
+    z-index: -1;
+    position: absolute;
+    @include margin-x(auto);
+    filter: blur(90px);
+    border-radius: 100%;
+    height: 440px;
+    width: 440px;
+    background-image: linear-gradient(0deg, rgb(164, 165, 219) 10%, rgb(226, 230, 248) 100%);
+}
+
+@media (max-width:800px) {
+    #about {
+        .container {
+
+            .badges {
+                .square {
+                    height: 10px;
+                    width: 10px;
+                }
+
+                margin-top: 0px;
+            }
+
+            .cards {
+                margin-top: 60px;
+
+                .red-div {
+                    height: 130px;
+                    width: 130px;
+                }
+
+                .card {
+                    height: 130px;
+                    width: 130px;
+
+                    h2 {
+                        font-size: 13px;
+                        margin-top: 10px;
+
+                    }
+
+                    img {
+                        margin-top: 0px;
+                    }
+
+                    h3 {
+                        font-weight: 500;
+                        font-size: 12px;
+                    }
+                }
+
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+        }
+    }
+}
+@media (max-height: 730px) {
+    #about {.container {
+        .cards {
+            margin-top: 50px;
+
+        }}}
+}
+@media (max-width: 500px) {
+    #about {
+        .container {
+            .cards {
+                .red-div {
+                    height: 100px;
+                    width: 100px;
+                }
+
+                .card {
+                    height: 100px;
+                    width: 100px;
+
+                    h2 {
+                        font-size: 13px;
+                        margin-top: 10px;
+                    }
+
+                    img {
+                        margin-top: 0px;
+                    }
+
+                    h3 {
+                        font-size: 12px;
+                    }
+                }
+
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+        }
+    }
+}
