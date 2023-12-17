@@ -326,8 +326,11 @@
         backdrop-filter: none;
         animation: none;
         .heroimg {
+            margin-top: -90px;
             margin-left: 10px;
-            height: 200px;
+            margin-bottom: -90px;
+            height: 400px;
+            scale: 45%;
             width: auto
         }
 

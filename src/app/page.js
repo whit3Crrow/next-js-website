@@ -12,11 +12,15 @@ import { useAnimation } from "framer-motion";
 
 
 
-export default function Home({isMobile}) {
+export default function Home() {
+
+  let [isMobile, setIsMobile] = useState(false);
   let [Slider, setSlider] = useState(0);
   const controler = useAnimation();
 
-
+  useEffect(() => {
+    window.innerWidth <= 700 ? setIsMobile(true) : null
+  }, [])
 
   return (
     <>
