@@ -23,9 +23,9 @@ function herosection() {
                     </div>
                     <div className="heroimg">
                         <Image eager src={meatbeater} width={311} height={400} alt="meat machine photo" />
-                        <Image loading="lazy" width={466} height={400} src={triangle} alt="visual triangle effect" className='triangle' />
-                        <Image loading="lazy" width={466} height={400} src={triangle} alt="visual triangle effect" className='triangle' />
-                        <Image loading="lazy" width={466} height={400} src={triangle} alt="visual triangle effect" className='triangle' />
+                        <Image  priority width={466} height={400} src={triangle} alt="visual triangle effect" className='triangle' />
+                        <Image priority width={466} height={400} src={triangle} alt="visual triangle effect" className='triangle' />
+                        <Image priority width={466} height={400} src={triangle} alt="visual triangle effect" className='triangle' />
 
                     </div>
                 </div>
