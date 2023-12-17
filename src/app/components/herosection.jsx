@@ -16,7 +16,7 @@ function herosection() {
                 <div className="container">
                     <div className="text_box">
                         <h1>
-                            PHU JAGIECH SERWIS
+                            PGU JAGIECH SERWIS
                         </h1>
                         <h2>Firma PHU JXXXXX – Adam Bensari powstała w 20xx roku a od 17 lat aktywnie działa w branży przemysłu mięsnego na rynku krajowym oferując szeroką gamę maszyn oraz utrzymania ich w ruchu</h2>
                         <div className="button" onClick={(e)=>{const element = document.getElementById('about'); element.scrollIntoView({behavior: 'smooth'})}}>O Nas</div>
