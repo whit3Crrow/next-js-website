@@ -8,7 +8,7 @@ import Logo2 from '../images/Logo2.png';
   
 
 
-function contact() {
+function Contact() {
   const form = useRef();
   const [isSend, setIsSend] = useState(false);
     
@@ -79,4 +79,4 @@ function contact() {
   )
 }
 
-export default contact
+export default Contact

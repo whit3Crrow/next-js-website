@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import './services.scss';
 import { easeInOut, motion, useInView, useAnimate,  spring, easeIn, useTime } from "framer-motion";
 
-function services({ Slider, setSlider, controler }) {
+function Services({ Slider, setSlider, controler }) {
   let notSwaping = useRef(true);
   const [scope, animate] = useAnimate();
   const [scope1, animate1] = useAnimate();
@@ -113,4 +113,4 @@ function services({ Slider, setSlider, controler }) {
   )
 }
 
-export default services
+export default Services

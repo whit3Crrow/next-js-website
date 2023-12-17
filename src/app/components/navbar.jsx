@@ -4,7 +4,7 @@ import logo from '../images/logocircle.webp';
 import Image from 'next/image'
 import './navbar.scss';
 
-function navbar({setIsMobile}) {
+function Navbar({setIsMobile}) {
     useEffect(() => {
 
         window.innerWidth <= 700 ? setIsMobile(true) : null
@@ -51,4 +51,4 @@ function navbar({setIsMobile}) {
     )
 }
 
-export default navbar
+export default Navbar

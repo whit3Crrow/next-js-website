@@ -31,7 +31,7 @@ import Wil_bizerba1 from '../images/wilk_bizerba/20120604022.avif';
 ///
 
 
-function galery(isMobile) {
+function Galery(isMobile) {
   const [indexGalery, setIndexGalery] = useState(0);
   const galerys = [{
     caption: 'Klipsownica', img: '/klipsownica/20120301209.avif', galery: [{
@@ -231,5 +231,5 @@ function galery(isMobile) {
 }
 
 
-export default galery
+export default Galery
 

@@ -56,4 +56,4 @@ function AboutUs(props) {
     )
 }
 
-export default aboutus
+export default AboutUs
