@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import './globals.css'
 import { Source_Sans_3 } from 'next/font/google'
 
