@@ -22,7 +22,7 @@ function herosection() {
                         <div className="button" onClick={(e)=>{const element = document.getElementById('about'); element.scrollIntoView({behavior: 'smooth'})}}>O Nas</div>
                     </div>
                     <div className="heroimg">
-                        <Image src={meatbeater} width={311} height={400} alt="meat machine photo" />
+                        <Image eager src={meatbeater} width={311} height={400} alt="meat machine photo" />
                         <Image loading="lazy" width={466} height={400} src={triangle} alt="visual triangle effect" className='triangle' />
                         <Image loading="lazy" width={466} height={400} src={triangle} alt="visual triangle effect" className='triangle' />
                         <Image loading="lazy" width={466} height={400} src={triangle} alt="visual triangle effect" className='triangle' />
