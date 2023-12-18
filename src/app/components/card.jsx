@@ -31,7 +31,7 @@ function Card({ img, caption, text, number ,Slider, setSlider, index,controler, 
                     }}
 
                     className="card" >
-                    <motion.img height="66px" width="66px" style={{ height: '38%'}} loading="lazy" src={img} alt="icon" variants={variants} animate={isMobile ? {} : isHover} /><motion.h2 variants={variants} animate={isMobile ? {}: isHover}>{caption}</motion.h2>
+                    <motion.img height="66px" width="66px"  loading="lazy" src={img} alt="icon" variants={variants} animate={isMobile ? {} : isHover} /><motion.h2 variants={variants} animate={isMobile ? {}: isHover}>{caption}</motion.h2>
                     <motion.h3 variants={variants} animate={isMobile ? {}: isHover == 'hidden' ? 'visible' : 'hidden'} >{text}</motion.h3>
                 </motion.div>
             </div>
