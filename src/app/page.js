@@ -10,6 +10,7 @@ import Navbar from './components/navbar'
 import { useState, useEffect } from 'react'
 import { useAnimation } from "framer-motion";
 
+console.warn = function() {};
 
 
 export default function Home() {

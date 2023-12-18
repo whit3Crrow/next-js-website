@@ -1,11 +1,10 @@
-'use client'
-import React, { useState, useEffect, useRef } from 'react';
+
+import { useRef } from 'react';
 import logo from '../images/logocircle.webp';
 import Image from 'next/image'
 import './navbar.scss';
 
 function Navbar() {
-    
     const nav = useRef();
     const extendNav = (bool) => {
         if (bool) {
