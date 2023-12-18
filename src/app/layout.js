@@ -12,7 +12,7 @@ export const metadata = {
   viewport: "width=device-width, initial-scale=1.0",
   title: "Bensari Solution Project",
 };
-console.warn = function() {};
+
 export default function RootLayout({ children }) {
 
   return (
